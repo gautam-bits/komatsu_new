@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import json
 
 app = Flask(__name__)
@@ -14,24 +14,18 @@ def data_fetch_byorder(fname, id):
     data2 = data_fetch(fname)
     for i in data2['page2data']:
         if i["job_id"] == int(id):
-            return i['job_details']
+            return i
 
-@app.route("/")
+@app.route("/", methods=["POST", "GET"])
 def hello():
-    # f = open('data.json')
-    # data = {
-    #         "job_id": 155212,
-    #         "robot_num": 1,
-    #         "job_details": {
-    #             "box_num": 221,
-    #             "ref_num": "DX87824239",
-    #             "location": "D2",
-    #             "part_num": 39,
-    #             "item": "screw",
-    #             "position": [125, 874, 985]
-    #         }
-    #      }
-
+    if request.method == "POST":
+        id = request.form['id']
+        up_data = {
+            "order_id": id,
+            "status": "confirmed"
+        }
+        print(up_data)
+    
     color = {
         "color": {
             'Recieved': '#228B22',
