@@ -4,10 +4,14 @@ import json
 app = Flask(__name__)
 
 
-if __name__ == '__main__':
-    app.run(port=1000)
+def home_data():
+    with open('homepage_api_data.json', 'r') as f:
+        data = json.load(f)
+    
+    return data
 
-@app.route('/')
+
+@app.route("/")
 def hello():
     # f = open('data.json')
     # data = {
@@ -21,8 +25,23 @@ def hello():
     #             "item": "screw",
     #             "position": [125, 874, 985]
     #         }
-    #     }
-    return render_template('home.html')
+    #      }
+
+    color = {
+        "color": {
+            'Recieved': '#228B22',
+            'Stopped': '#D22B2B',
+            'Restarting': '#F28C28',
+            'Picking': '#00008B', 
+            'Waiting': '#ADD8E6'
+        }
+    }
+
+    data = home_data()
+    data.update(color)
+    print(data)
+
+    return render_template('home.html', data=data)
 
 
 @app.route('/2')
@@ -44,3 +63,8 @@ def eighteen():
 @app.route('/19')
 def nin():
     return render_template('19.html')
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+    # app.run(port=1000)
