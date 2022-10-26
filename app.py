@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request
 import json
+from flask_qrcode import QRcode
+
 
 # GLOBAL CONST:
 color = {
@@ -14,6 +16,7 @@ color = {
 
 
 app = Flask(__name__)
+QRcode(app)
 
 
 def data_fetch(fname):

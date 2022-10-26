@@ -11,30 +11,6 @@
             "name": "DKIPW0932D",
             "order_id": "122623",
             "status": "Waiting"
-        },
-        {
-            "serial_number": 3,
-            "name": "DKIPW0932D",
-            "order_id": "127323",
-            "status": "Restarting"
-        },
-        {
-            "serial_number": 4,
-            "name": "DKIPW0932D",
-            "order_id": "142323",
-            "status": "Picking"
-        },
-        {
-            "serial_number": 5,
-            "name": "DKIPW0932D",
-            "order_id": "122393",
-            "status": "Stopped"
-        },
-        {
-            "serial_number": 6,
-            "name": "DKIPW0932D",
-            "order_id": "122320",
-            "status": "Recieved"
         }
     ]
 }
