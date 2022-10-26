@@ -1,0 +1,77 @@
+{
+    "page2data": [
+        {
+            "job_id": 122323,
+            "robot_num": 1,
+            "job_details": {
+                "box_num": 221,
+                "ref_num": "DX87824239",
+                "location": "D2",
+                "part_num": 39,
+                "item": "screw",
+                "position": [125, 874, 985]
+                }
+        },
+        {
+            "job_id": 122623,
+            "robot_num": 2,
+            "job_details": {
+                "box_num": 222,
+                "ref_num": "DX87824239",
+                "location": "D3",
+                "part_num": 39,
+                "item": "bolt",
+                "position": [125, 874, 985]
+                }
+        },
+        {
+            "job_id": 127323,
+            "robot_num": 3,
+            "job_details": {
+                "box_num": 223,
+                "ref_num": "DX87824239",
+                "location": "D4",
+                "part_num": 39,
+                "item": "glue",
+                "position": [125, 874, 985]
+                }
+        },
+        {
+            "job_id": 142323,
+            "robot_num": 4,
+            "job_details": {
+                "box_num": 224,
+                "ref_num": "DX87824239",
+                "location": "D5",
+                "part_num": 39,
+                "item": "gear",
+                "position": [125, 874, 985]
+                }
+        },
+        {
+            "job_id": 122393,
+            "robot_num": 5,
+            "job_details": {
+                "box_num": 225,
+                "ref_num": "DX87824239",
+                "location": "D6",
+                "part_num": 39,
+                "item": "hammer",
+                "position": [125, 874, 985]
+                }
+        },
+        {
+            "job_id": 122320,
+            "robot_num": 6,
+            "job_details": {
+                "box_num": 226,
+                "ref_num": "DX87824239",
+                "location": "D7",
+                "part_num": 39,
+                "item": "ply",
+                "position": [125, 874, 985]
+                }
+        }
+    ]
+}
+

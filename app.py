@@ -4,12 +4,17 @@ import json
 app = Flask(__name__)
 
 
-def home_data():
-    with open('homepage_api_data.json', 'r') as f:
+def data_fetch(fname):
+    with open(fname, 'r') as f:
         data = json.load(f)
     
     return data
 
+def data_fetch_byorder(fname, id):
+    data2 = data_fetch(fname)
+    for i in data2['page2data']:
+        if i["job_id"] == int(id):
+            return i['job_details']
 
 @app.route("/")
 def hello():
@@ -37,16 +42,17 @@ def hello():
         }
     }
 
-    data = home_data()
+    data = data_fetch('homepage_api_data.json')
     data.update(color)
-    print(data)
 
     return render_template('home.html', data=data)
 
 
-@app.route('/2')
-def tw():
-    return render_template('2.html')
+@app.route('/2/<order_id>')
+def tw(order_id):
+    data = data_fetch_byorder('page2_api_data.json', order_id)
+    print(data)
+    return render_template('2.html', data=data)
 
 @app.route('/7')
 def sev():

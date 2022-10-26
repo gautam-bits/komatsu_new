@@ -38,21 +38,23 @@
                     <ul class="listHome">
                         {% if data %}
                             {% for i in data['homepageData'] %}
-                                <li class="listItem">
-                                    <div class="flex_row">
-                                        <div class="list_index">
-                                            <h4 class="index_text">{{i['serial_number']}}</h4>
+                                <a href="{{url_for('tw', order_id=i['order_id'])}}">
+                                    <li class="listItem">
+                                        <div class="flex_row">
+                                            <div class="list_index">
+                                                <h4 class="index_text">{{i['serial_number']}}</h4>
+                                            </div>
+                                            <div class="list_key">
+                                                <h4 class="key_text">{{i['name']}}</h4>
+                                            </div>
+                                            <div class="list_value">
+                                                {% for k, v in data['color'].items() if k == i['status'] %}
+                                                    <h4 class="value_text" style="color: {{v}}">{{i['status']}}</h4>
+                                                {% endfor %}
+                                            </div>
                                         </div>
-                                        <div class="list_key">
-                                            <h4 class="key_text">{{i['name']}}</h4>
-                                        </div>
-                                        <div class="list_value">
-                                            {% for k, v in data['color'].items() if k == i['status'] %}
-                                                <h4 class="value_text" style="color: {{v}}">{{i['status']}}</h4>
-                                            {% endfor %}
-                                        </div>
-                                    </div>
-                                </li>
+                                    </li>
+                                </a>
                             {% endfor %}
                         {% endif %}
                     </ul>
