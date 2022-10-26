@@ -38,7 +38,7 @@
                     <ul class="listHome">
                         {% if data %}
                             {% for i in data['homepageData'] %}
-                                <a href="{{url_for('tw', order_id=i['order_id'])}}">
+                                <a href="{{url_for('tw', order_id=i['order_id'])}}" style="color: inherit; text-decoration: none;">
                                     <li class="listItem">
                                         <div class="flex_row">
                                             <div class="list_index">
