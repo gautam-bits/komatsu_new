@@ -16,7 +16,7 @@ def data_fetch_byorder(fname, id):
         if i["job_id"] == int(id):
             return i
 
-@app.route("/", methods=["POST", "GET"])
+@app.route("/", methods=["GET", "POST"])
 def hello():
     if request.method == "POST":
         id = request.form['id']

@@ -75,12 +75,10 @@
                         </div>
                     </div>
 
-                    <form action="{{url_for('hello')}}" method="post">
-                        <div class="form_button_div">
-                            <input type="hidden" name="id" value={{ data['job_id'] }}>
-                            <input class="form_button" id="myBtn" type="submit" value="承認する" />
-                        </div>
-                    </form>
+                   
+                    <div class="form_button_div">    
+                        <button class="form_button" id="myBtn">承認する</button>
+                    </div>
                     
                 </div>
             </div>
@@ -98,7 +96,10 @@
                     <div class="modal_text_div">
                         <h3>リストに戻る</h3>
                     </div>
-                    <div class="modal_btn_div"><button class="modal_content_button">承認が完了しました</button></div>
+                    <form action="{{url_for('hello')}}" method="post">
+                        <input type="hidden" name="id" value={{ data['job_id'] }}>
+                        <div class="modal_btn_div"><input class="modal_content_button" type="submit" value="承認が完了しました" /></div>
+                    </form>
                 </div>
             </div>
 
