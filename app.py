@@ -51,7 +51,6 @@ def hello():
 @app.route('/2/<order_id>')
 def tw(order_id):
     data = data_fetch_byorder('page2_api_data.json', order_id)
-    print(data)
     return render_template('2.html', data=data)
 
 @app.route('/7')
