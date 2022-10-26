@@ -1,0 +1,33 @@
+@media only screen and (max-width:720px) {
+    .home {
+        width: 100%;
+    }
+
+    .list {
+        width: 100%;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    .header_box {
+        width: 90%;
+    }
+
+    .blank {
+        flex: 0%;
+    }
+
+    .title {
+        flex: 20%;
+    }
+
+    .sub_title {
+        flex: 20%;
+    }
+
+    .header_box {
+        flex: 30%;
+    }
+}

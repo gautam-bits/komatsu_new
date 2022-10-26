@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<title>
+    Home
+</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/CSS/style.css')}}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/CSS/home.css')}}" />
+<head>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="home">
+            <div class="header">
+                <div class="title">
+                    <h4>KOMATSU</h4>
+                </div>
+                <div class="sub_title">
+                    <h5>オーダーリスト</h5>
+                </div>
+                <div class="blank"></div>
+                <div class="box1">
+                    <div class="header_box">
+                        ステータス
+                    </div>
+                </div>
+                <div class="box2">
+                    <div class="header_box">
+                        過去のオーダ
+                    </div>
+                </div>
+            </div>
+
+            <div class="fixed_div">
+                <div class="list">
+                    <ul class="listHome">
+                        {% if data %}
+                        {% for i in data %}
+                        <li class="listItem">
+                            <div class="flex_row">
+                                <div class="list_index">
+                                    <h4 class="index_text">{{data['box_num'][i]}}</h4>
+                                </div>
+                                <div class="list_key">
+                                    <h4 class="key_text">DKIPW0932D</h4>
+                                </div>
+                                <div class="list_value">
+                                    <h4 class="value_text">受取済み</h4>
+                                </div>
+                            </div>
+                        </li>
+                        {% endfor %}
+                        {% endif %}
+
+                        <li class="listItem">
+                            <div class="flex_row">
+                                <div class="list_index">
+                                    <h4 class="index_text">2</h4>
+                                </div>
+                                <div class="list_key">
+                                    <h4 class="key_text">DKIPW0932D</h4>
+                                </div>
+                                <div class="list_value">
+                                    <h4 class="value_text">受取済み</h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="listItem">
+                            <div class="flex_row">
+                                <div class="list_index">
+                                    <h4 class="index_text">3</h4>
+                                </div>
+                                <div class="list_key">
+                                    <h4 class="key_text">DKIPW0932D</h4>
+                                </div>
+                                <div class="list_value">
+                                    <h4 class="value_text">停止中</h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="listItem">
+                            <div class="flex_row">
+                                <div class="list_index">
+                                    <h4 class="index_text">4</h4>
+                                </div>
+                                <div class="list_key">
+                                    <h4 class="key_text">DKIPW0932D</h4>
+                                </div>
+                                <div class="list_value">
+                                    <h4 class="value_text">移動中</h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="listItem">
+                            <div class="flex_row">
+                                <div class="list_index">
+                                    <h4 class="index_text">5</h4>
+                                </div>
+                                <div class="list_key">
+                                    <h4 class="key_text">DKIPW0932D</h4>
+                                </div>
+                                <div class="list_value">
+                                    <h4 class="value_text">移動中</h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="listItem">
+                            <div class="flex_row">
+                                <div class="list_index">
+                                    <h4 class="index_text">6</h4>
+                                </div>
+                                <div class="list_key">
+                                    <h4 class="key_text">DKIPW0932D</h4>
+                                </div>
+                                <div class="list_value">
+                                    <h4 class="value_text">待機中</h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="listItem">
+                            <div class="flex_row">
+                                <div class="list_index">
+                                    <h4 class="index_text">6</h4>
+                                </div>
+                                <div class="list_key">
+                                    <h4 class="key_text">DKIPW0932D</h4>
+                                </div>
+                                <div class="list_value">
+                                    <h4 class="value_text">待機中</h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="listItem">
+                            <div class="flex_row">
+                                <div class="list_index">
+                                    <h4 class="index_text">6</h4>
+                                </div>
+                                <div class="list_key">
+                                    <h4 class="key_text">DKIPW0932D</h4>
+                                </div>
+                                <div class="list_value">
+                                    <h4 class="value_text">待機中</h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="listItem">
+                            <div class="flex_row">
+                                <div class="list_index">
+                                    <h4 class="index_text">6</h4>
+                                </div>
+                                <div class="list_key">
+                                    <h4 class="key_text">DKIPW0932D</h4>
+                                </div>
+                                <div class="list_value">
+                                    <h4 class="value_text">待機中</h4>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

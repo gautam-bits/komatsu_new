@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<title>
+    Home
+</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/CSS/style.css')}}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/CSS/2.css')}}" />
+
+<head>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="home">
+            <div class="header">
+                <div class="title">
+                    <h4>KOMATSU</h4>
+                </div>
+                <div class="sub_title">
+                    <h4>受取済み</h4>
+                </div>
+                <div class="blank"></div>
+                <div class="box1">
+
+                </div>
+                <div class="box2">
+                    <div class="header_box">
+                        リストに戻る
+                    </div>
+                </div>
+            </div>
+
+            <div class="fixed_div">
+                <div class="form">
+                    <div class="display_flex">
+                        <div class="div_text">
+                            <h4>Box No.</h4>
+                        </div>
+
+                    </div>
+                    <div class="display_flex">
+                        <div class="div_text">
+                            <h4>Ref No.</h4>
+                        </div>
+                        <div class="div_qr">
+                            <img class="qr_image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAALVBMVEX///8AAAD4+Pj8/PylpaX5+fn09PSpqakJCQnu7u5oaGhtbW3x8fEEBATt7e0yPAHRAAAEeklEQVR4nO2d4XaiMBBGba2Iben7P+6e3ZVg+cg4E4IC3vtn95SQmWtV0mQIhwMAAAAAAADAi/I+D+3HCLFcdEvwbR6po/STYz6Ehp8Z3aOI4T0wxHAeGGLoAcM1GX6dP7ycPyOG1pgmnfUZiP5VaHh2tO45hwwNZkaPGX4EYnxUNyyLjuFfMLwXQ3PF8BcY3oleaHjMozE015mGoehlhse3PM3iho0Rve95ScO+x+UMrVEkhhhiiCGG+zGMCG7KUJNuxkeOeta2DSU8hhhiiCGGUcNu94bt3gwdZ2GIIYYYYohhntN2DFvPnPeVrk3//T79W+M+NcZZac67fctSy/DQZEsB01/tE4Zy1iWfqmEYi/7QtSfhVGYYiv5cQ+sTlRpheCc6hr/zwHA6hqfntRjOrIkyevYYPqImKlJZNlHX1oyvWjHDsujPrU0cevaMacpYi6FnXFrGWgw9f1uUgSGGHjC8zWO/hvv/Lm2ulXcTRfszo7tuz1sM15hm02C4fTDcPhhun/0bWlfzR6aho0dXih40mLaRUs3YPEBs1Fbd0KjFyBvGRnYYYoghhhhu3tCoZF+LodwAOFyOdWJi6Gd8u+CEYepaXo4JQ8cdiaWGwrA0r5NL+V/LlGGPRLc2YCgjZGhNEGJ4wHAcotzpXtKhxhj+4tmGp5LGmzK8rkVbW9sZC9dDwV0ylNNvDPtDHsNsWhX33NOliERfoOBZezpoY4+hkVi1lRnDUPMwDI2kMcQQQwxfxnCisNljqGOJ1Rl+54vTPYaXcVHfsw3f5brcdf//kRsMbkYVhmHbjZM2Rif6k9RPI6Muh6Dvo6UYbzzPhzaE9Byj0ND48sAwDIZ3wPBlDR3fpdbwIMRzDBuZdU6H+jnvib3lNLwxe52OVDOc+cYzXg7jwjy8ZCJovC6bNDQWqjDEEEMMMXwJQyN8vk01w2qIV5s/ZBX1hW4/eejdCPnwniF44Q02GFYFQwwxNEM8hFc29Pyxv6Cha93CwBO+n48ojHUY91NauTczvB7y1JeGQpSBoTu8HsIwHAJDDGeGlyPWLrv7MGwvo0Xp08SlX9fPJ0I4VsJdhjP3GCp7gYwaCMVTx2IZ1np2Xghjoaq+Ya0nWhUZFhYuYYghhhgGkg59lw6NCw3L9qAtM2wi10NtXGY4dx/hcX3d6aIDlvHdCPamw/nG1Q1Tj6HnPb130o/xmw9tKrUWQ+3HkTSGGGKI4XKGG/gulbvVY4ahDfqeYzjk6jAUJnbgmcmChpG1p4l8MMQQQwwxfClDV9H+QRqvzlBVPQOO1Fhq9SfKFvP5bMHQU1+KIYYYYvh6hrqOvwVDY85b8tCn5a7F0LPHnetdauSRbzOMafT+w2qGDpYzdE3PYIghhhiu1rDWs/M0j7XswPM1r67tfbQWfbMtjbGZTWrbjyWGp+Vq404Wk59bq9/+XL1+tLEUQzRyaGJDou/xWcHaxNqGnfHGC5FOr7ZrRCVD66OFIYYYYojhtgytXXo9GP3ooZkZlp0OAAAAAAAAsEf+APlBZiNIqTfDAAAAAElFTkSuQmCC"
+                                alt="" srcset="">
+                        </div>
+                    </div>
+                    <div class="display_flex">
+                        <div class="div_text">
+                            <h4>Location</h4>
+                        </div>
+                        <div class="div_qr">
+                            <img class="qr_image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAALVBMVEX///8AAAD4+Pj8/PylpaX5+fn09PSpqakJCQnu7u5oaGhtbW3x8fEEBATt7e0yPAHRAAAEeklEQVR4nO2d4XaiMBBGba2Iben7P+6e3ZVg+cg4E4IC3vtn95SQmWtV0mQIhwMAAAAAAADAi/I+D+3HCLFcdEvwbR6po/STYz6Ehp8Z3aOI4T0wxHAeGGLoAcM1GX6dP7ycPyOG1pgmnfUZiP5VaHh2tO45hwwNZkaPGX4EYnxUNyyLjuFfMLwXQ3PF8BcY3oleaHjMozE015mGoehlhse3PM3iho0Rve95ScO+x+UMrVEkhhhiiCGG+zGMCG7KUJNuxkeOeta2DSU8hhhiiCGGUcNu94bt3gwdZ2GIIYYYYohhntN2DFvPnPeVrk3//T79W+M+NcZZac67fctSy/DQZEsB01/tE4Zy1iWfqmEYi/7QtSfhVGYYiv5cQ+sTlRpheCc6hr/zwHA6hqfntRjOrIkyevYYPqImKlJZNlHX1oyvWjHDsujPrU0cevaMacpYi6FnXFrGWgw9f1uUgSGGHjC8zWO/hvv/Lm2ulXcTRfszo7tuz1sM15hm02C4fTDcPhhun/0bWlfzR6aho0dXih40mLaRUs3YPEBs1Fbd0KjFyBvGRnYYYoghhhhu3tCoZF+LodwAOFyOdWJi6Gd8u+CEYepaXo4JQ8cdiaWGwrA0r5NL+V/LlGGPRLc2YCgjZGhNEGJ4wHAcotzpXtKhxhj+4tmGp5LGmzK8rkVbW9sZC9dDwV0ylNNvDPtDHsNsWhX33NOliERfoOBZezpoY4+hkVi1lRnDUPMwDI2kMcQQQwxfxnCisNljqGOJ1Rl+54vTPYaXcVHfsw3f5brcdf//kRsMbkYVhmHbjZM2Rif6k9RPI6Muh6Dvo6UYbzzPhzaE9Byj0ND48sAwDIZ3wPBlDR3fpdbwIMRzDBuZdU6H+jnvib3lNLwxe52OVDOc+cYzXg7jwjy8ZCJovC6bNDQWqjDEEEMMMXwJQyN8vk01w2qIV5s/ZBX1hW4/eejdCPnwniF44Q02GFYFQwwxNEM8hFc29Pyxv6Cha93CwBO+n48ojHUY91NauTczvB7y1JeGQpSBoTu8HsIwHAJDDGeGlyPWLrv7MGwvo0Xp08SlX9fPJ0I4VsJdhjP3GCp7gYwaCMVTx2IZ1np2Xghjoaq+Ya0nWhUZFhYuYYghhhgGkg59lw6NCw3L9qAtM2wi10NtXGY4dx/hcX3d6aIDlvHdCPamw/nG1Q1Tj6HnPb130o/xmw9tKrUWQ+3HkTSGGGKI4XKGG/gulbvVY4ahDfqeYzjk6jAUJnbgmcmChpG1p4l8MMQQQwwxfClDV9H+QRqvzlBVPQOO1Fhq9SfKFvP5bMHQU1+KIYYYYvh6hrqOvwVDY85b8tCn5a7F0LPHnetdauSRbzOMafT+w2qGDpYzdE3PYIghhhiu1rDWs/M0j7XswPM1r67tfbQWfbMtjbGZTWrbjyWGp+Vq404Wk59bq9/+XL1+tLEUQzRyaGJDou/xWcHaxNqGnfHGC5FOr7ZrRCVD66OFIYYYYojhtgytXXo9GP3ooZkZlp0OAAAAAAAAsEf+APlBZiNIqTfDAAAAAElFTkSuQmCC"
+                                alt="" srcset="">
+                        </div>
+                    </div>
+                    <div class="display_flex">
+                        <div class="div_text">
+                            <h4>Part No.</h4>
+                        </div>
+                        <div class="div_qr">
+                            <img class="qr_image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAALVBMVEX///8AAAD4+Pj8/PylpaX5+fn09PSpqakJCQnu7u5oaGhtbW3x8fEEBATt7e0yPAHRAAAEeklEQVR4nO2d4XaiMBBGba2Iben7P+6e3ZVg+cg4E4IC3vtn95SQmWtV0mQIhwMAAAAAAADAi/I+D+3HCLFcdEvwbR6po/STYz6Ehp8Z3aOI4T0wxHAeGGLoAcM1GX6dP7ycPyOG1pgmnfUZiP5VaHh2tO45hwwNZkaPGX4EYnxUNyyLjuFfMLwXQ3PF8BcY3oleaHjMozE015mGoehlhse3PM3iho0Rve95ScO+x+UMrVEkhhhiiCGG+zGMCG7KUJNuxkeOeta2DSU8hhhiiCGGUcNu94bt3gwdZ2GIIYYYYohhntN2DFvPnPeVrk3//T79W+M+NcZZac67fctSy/DQZEsB01/tE4Zy1iWfqmEYi/7QtSfhVGYYiv5cQ+sTlRpheCc6hr/zwHA6hqfntRjOrIkyevYYPqImKlJZNlHX1oyvWjHDsujPrU0cevaMacpYi6FnXFrGWgw9f1uUgSGGHjC8zWO/hvv/Lm2ulXcTRfszo7tuz1sM15hm02C4fTDcPhhun/0bWlfzR6aho0dXih40mLaRUs3YPEBs1Fbd0KjFyBvGRnYYYoghhhhu3tCoZF+LodwAOFyOdWJi6Gd8u+CEYepaXo4JQ8cdiaWGwrA0r5NL+V/LlGGPRLc2YCgjZGhNEGJ4wHAcotzpXtKhxhj+4tmGp5LGmzK8rkVbW9sZC9dDwV0ylNNvDPtDHsNsWhX33NOliERfoOBZezpoY4+hkVi1lRnDUPMwDI2kMcQQQwxfxnCisNljqGOJ1Rl+54vTPYaXcVHfsw3f5brcdf//kRsMbkYVhmHbjZM2Rif6k9RPI6Muh6Dvo6UYbzzPhzaE9Byj0ND48sAwDIZ3wPBlDR3fpdbwIMRzDBuZdU6H+jnvib3lNLwxe52OVDOc+cYzXg7jwjy8ZCJovC6bNDQWqjDEEEMMMXwJQyN8vk01w2qIV5s/ZBX1hW4/eejdCPnwniF44Q02GFYFQwwxNEM8hFc29Pyxv6Cha93CwBO+n48ojHUY91NauTczvB7y1JeGQpSBoTu8HsIwHAJDDGeGlyPWLrv7MGwvo0Xp08SlX9fPJ0I4VsJdhjP3GCp7gYwaCMVTx2IZ1np2Xghjoaq+Ya0nWhUZFhYuYYghhhgGkg59lw6NCw3L9qAtM2wi10NtXGY4dx/hcX3d6aIDlvHdCPamw/nG1Q1Tj6HnPb130o/xmw9tKrUWQ+3HkTSGGGKI4XKGG/gulbvVY4ahDfqeYzjk6jAUJnbgmcmChpG1p4l8MMQQQwwxfClDV9H+QRqvzlBVPQOO1Fhq9SfKFvP5bMHQU1+KIYYYYvh6hrqOvwVDY85b8tCn5a7F0LPHnetdauSRbzOMafT+w2qGDpYzdE3PYIghhhiu1rDWs/M0j7XswPM1r67tfbQWfbMtjbGZTWrbjyWGp+Vq404Wk59bq9/+XL1+tLEUQzRyaGJDou/xWcHaxNqGnfHGC5FOr7ZrRCVD66OFIYYYYojhtgytXXo9GP3ooZkZlp0OAAAAAAAAsEf+APlBZiNIqTfDAAAAAElFTkSuQmCC"
+                                alt="" srcset="">
+                        </div>
+                    </div>
+                    <div class="display_flex">
+                        <div class="div_text">
+                            <h4>Item</h4>
+                        </div>
+                    </div>
+                    <div class="form_button_div">
+                        <button class="form_button" id="myBtn">承認する</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="title" style="text-align:left">
+                    <h4>KOMATSU</h4>
+                </div>
+                <div class="modal_text_btn_div">
+                    <div class="modal_text_div">
+                        <h3>リストに戻る</h3>
+                    </div>
+                    <div class="modal_btn_div"><button class="modal_content_button">承認が完了しました</button></div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

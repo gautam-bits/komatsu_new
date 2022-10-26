@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/CSS/style.css')}}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/CSS/2.css')}}" />
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="home">
+            <div class="header">
+                <div class="title">
+                    <h4>KOMATSU</h4>
+                </div>
+                <div class="sub_title">
+                    <h5>ロボットのステータス</h5>
+                </div>
+                <div class="box1">
+
+                </div>
+                <div class="box2">
+                    <div class="header_box">
+                        リストに戻る
+                    </div>
+                </div>
+            </div>
+            <div class="fixed_div">
+                <div class="stepper">
+                    <div class="stepper_flex">
+                        <div class="stepper_flex_robot">
+                            Robot 01
+                        </div>
+                        <div class="stepper_flex_div">
+                            <div class="stepper_flex_div_empty">
+                                <div class="cir_div"></div>
+                                <div style="text-align: center">エラー</div>
+                            </div>
+                            <div class="stepper_flex_div_stepper">
+                                <div class="wrapper-progressBar">
+                                    <ul class="progressBar">
+                                        <li class="active">待機中</li>
+                                        <li>移動中</li>
+                                        <li>ピッキング完了</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stepper_flex">
+                        <div class="stepper_flex_robot">
+                            Robot 02
+                        </div>
+                        <div class="stepper_flex_div">
+                            <div class="stepper_flex_div_empty">
+                                <div class="cir_div"></div>
+                                <div style="text-align: center">エラー</div>
+                            </div>
+                            <div class="stepper_flex_div_stepper">
+                                <div class="wrapper-progressBar">
+                                    <ul class="progressBar">
+                                        <li class="active">待機中</li>
+                                        <li>移動中</li>
+                                        <li>ピッキング完了</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
