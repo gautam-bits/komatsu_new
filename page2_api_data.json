@@ -1,7 +1,7 @@
 {
     "page2data": [
         {
-            "job_id": 122323,
+            "job_id": "122323",
             "robot_num": 1,
             "job_details": {
                 "box_num": 221,
@@ -13,7 +13,7 @@
                 }
         },
         {
-            "job_id": 122623,
+            "job_id": "122623",
             "robot_num": 2,
             "job_details": {
                 "box_num": 222,
@@ -25,7 +25,7 @@
                 }
         },
         {
-            "job_id": 127323,
+            "job_id": "127323",
             "robot_num": 3,
             "job_details": {
                 "box_num": 223,
@@ -37,7 +37,7 @@
                 }
         },
         {
-            "job_id": 142323,
+            "job_id": "142323",
             "robot_num": 4,
             "job_details": {
                 "box_num": 224,
@@ -49,7 +49,7 @@
                 }
         },
         {
-            "job_id": 122393,
+            "job_id": "122393",
             "robot_num": 5,
             "job_details": {
                 "box_num": 225,
@@ -61,7 +61,7 @@
                 }
         },
         {
-            "job_id": 122320,
+            "job_id": "122320",
             "robot_num": 6,
             "job_details": {
                 "box_num": 226,

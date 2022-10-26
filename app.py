@@ -1,6 +1,18 @@
 from flask import Flask, render_template, request
 import json
 
+# GLOBAL CONST:
+color = {
+        "color": {
+            'Recieved': '#228B22',
+            'Stopped': '#D22B2B',
+            'Restarting': '#F28C28',
+            'Picking': '#00008B', 
+            'Waiting': '#ADD8E6'
+        }
+    }
+
+
 app = Flask(__name__)
 
 
@@ -13,7 +25,7 @@ def data_fetch(fname):
 def data_fetch_byorder(fname, id):
     data2 = data_fetch(fname)
     for i in data2['page2data']:
-        if i["job_id"] == int(id):
+        if i["job_id"] == id:
             return i
 
 @app.route("/", methods=["GET", "POST"])
@@ -25,16 +37,6 @@ def hello():
             "status": "confirmed"
         }
         print(up_data)
-    
-    color = {
-        "color": {
-            'Recieved': '#228B22',
-            'Stopped': '#D22B2B',
-            'Restarting': '#F28C28',
-            'Picking': '#00008B', 
-            'Waiting': '#ADD8E6'
-        }
-    }
 
     data = data_fetch('homepage_api_data.json')
     data.update(color)
@@ -53,7 +55,11 @@ def sev():
 
 @app.route('/10')
 def ten():
-    return render_template('10.html')
+    data = data_fetch('homepage_api_data.json')
+    data.update(color)
+    data.update(data_fetch('page10_api_data.json'))
+
+    return render_template('10.html', data=data)
 
 @app.route('/18')
 def eighteen():

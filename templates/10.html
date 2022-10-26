@@ -30,24 +30,59 @@
                 </div>
             </div>
             <div class="fixed_div">
-                <div class="robot">
-                    <div class="robot1">
-                        <div class="robot1_text">Robot1</div>
-                        <div class="robot1_waiting_text robot_active_back_color">Waiting</div>
-                        <div class="robot1_picking_text">Picking</div>
-                        <div class="robot1_picking_done_text">Picking Done</div>
-                        <div class="robot1_error_text">Error</div>
+
+                <!-- {
+                    background-color: #4469e6;
+                    color: white;
+                } -->
+
+                {% for i in data['robot_details'] %}
+                    <div class="robot">
+                        <div class="robot1">
+                            <div class="robot1_text">Robot{{loop.index}}</div>
+                            {% for j in data['homepageData'] %}
+                                {% if j['order_id'] == i["job_id"] %}
+                                    {% if i["status"] == 'Done' %}
+                                        {% if j["status"] == "Waiting" %}
+                                            <div class="robot1_waiting_text" style="background-color: {{ data['color']['Waiting'] }}; color: white;">Waiting</div>
+                                        {% else %}
+                                            <div class="robot1_waiting_text">Waiting</div>
+                                        {% endif %}
+                                        {% if j["status"] == "Picking" %}
+                                            <div class="robot1_waiting_text" style="background-color: {{ data['color']['Picking'] }}; color: white;">Picking</div>
+                                        {% else %}
+                                            <div class="robot1_waiting_text">Picking</div>
+                                        {% endif %}
+                                        {% if j["status"] == "Restarting" %}
+                                            <div class="robot1_waiting_text" style="background-color: {{ data['color']['Restarting'] }}; color: white;">Restarting</div>
+                                        {% else %}
+                                            <div class="robot1_waiting_text">Restarting</div>
+                                        {% endif %}
+                                        {% if j["status"] == "Stopped" %}
+                                            <div class="robot1_waiting_text" style="background-color: {{ data['color']['Stopped'] }}; color: white;">Stopped</div>
+                                        {% else %}
+                                            <div class="robot1_waiting_text">Stopped</div>
+                                        {% endif %}
+                                        {% if j["status"] == "Recieved" %}
+                                            <div class="robot1_waiting_text" style="background-color: {{ data['color']['Recieved'] }}; color: white;">Recieved</div>
+                                        {% else %}
+                                            <div class="robot1_waiting_text">Recieved</div>
+                                        {% endif %}
+                                        <div class="robot1_waiting_text">Error</div>
+                                    {% else %}
+                                        <div class="robot1_waiting_text">Waiting</div>
+                                        <div class="robot1_waiting_text">Picking</div>
+                                        <div class="robot1_waiting_text">Restarting</div>
+                                        <div class="robot1_waiting_text">Stopped</div>
+                                        <div class="robot1_waiting_text">Recieved</div>
+                                        <div class="robot1_waiting_text" style="background-color: #8B0000; color: white;">Error</div>
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
                     </div>
-                </div>
-                <div class="robot">
-                    <div class="robot1">
-                        <div class="robot1_text">Robot2</div>
-                        <div class="robot1_waiting_text">Waiting</div>
-                        <div class="robot1_picking_text">Picking</div>
-                        <div class="robot1_picking_done_text">Picking Done</div>
-                        <div class="robot1_error_text">Error</div>
-                    </div>
-                </div>
+
+                {% endfor %}
             </div>
 
         </div>
