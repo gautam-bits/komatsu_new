@@ -41,12 +41,9 @@ def dump_data(fname, data):
 
 def data_fetch_byorder(fname, id):
     data2 = data_fetch(fname)
-    for i in data2['jobs_queue']:
-        if str(i["job_id"]) == id:
-            return i
-    for i in data2['jobs_completed']:
-        if str(i["job_id"]) == id:
-            return i
+    for i in data2['jobs']:
+        if i == id:
+            return data2['jobs'][i]
 
 @app.route("/", methods=["GET", "POST"])
 def hello():
@@ -80,8 +77,11 @@ def hello():
 def getjob(robot_num):
     data = data_fetch('current_orders.json')
     
-    job = data['jobs_queue'].pop(0)
-    data['jobs_completed'].append(job)
+    jobid = data['jobs_waiting'].pop(0)
+    data['jobs'][jobid]['status'] = "Picking"
+    data['jobs'][jobid]['robot_id'] = robot_num
+
+    job = data['jobs'][jobid]
     dump_data('current_orders.json', data)
 
     data = data_fetch('robot_temp_db.json')
@@ -93,6 +93,7 @@ def getjob(robot_num):
 @app.route("/job-status/robot/<robot_num>", methods=["GET", "POST"])
 def jobstat(robot_num):
     data = data_fetch('robot_temp_db.json')
+    data2 = data_fetch('current_orders.json')
     if request.method == "POST":
         # expecting {"status": "newstatus"}
         req = request.json
@@ -100,7 +101,9 @@ def jobstat(robot_num):
         if newstatus is None:
             newstatus = "Unspecified"
         data[robot_num]["status"] = newstatus
+        data2['jobs'][data[robot_num]["job_id"]]["status"]= newstatus
         dump_data('robot_temp_db.json', data)
+        dump_data('current_orders.json', data2)
         return data[robot_num]
     else:
         return data[robot_num]
@@ -126,10 +129,11 @@ def robotlist():
 @app.route("/pastorders", methods=["GET"])
 def pastorders():
 
-    data2 = data_fetch('current_orders.json')
+    data2 = data_fetch('pastorders_api_data.json')
     hmpgata = []
     count = 1
-    for item in data2["jobs_completed"]:
+    for itemid in data2["jobs_completed"]:
+        item = data2["jobs_completed"][itemid]
         hmpgata.append(
             {"serial_number": count,
             "name": item["job_details"]["ref_num"],

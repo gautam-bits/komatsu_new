@@ -1,1 +1,14 @@
-{"1": {"robot_id": "1", "name": "Robot 1", "job_id": 155212, "status": "Picking"}, "2": {"robot_id": "2", "name": "Robot 2", "job_id": 155212, "status": "Waiting"}}
+{
+    "1": {
+        "robot_id": "1",
+        "name": "Robot 1",
+        "job_id": "155212",
+        "status": "Picking"
+    },
+    "2": {
+        "robot_id": "2",
+        "name": "Robot 2",
+        "job_id": "155212",
+        "status": "Waiting"
+    }
+}
