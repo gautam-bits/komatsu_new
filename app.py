@@ -58,7 +58,8 @@ def hello():
     data2 = data_fetch('current_orders.json')
     hmpgata = []
     count = 1
-    for item in data2["jobs_queue"]:
+    for itemid in data2["jobs"]:
+        item = data2["jobs"][itemid]
         hmpgata.append(
             {"serial_number": count,
             "name": item["job_details"]["ref_num"],
