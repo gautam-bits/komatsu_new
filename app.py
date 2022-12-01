@@ -4,11 +4,13 @@ from flask_qrcode import QRcode
 
 
 # Status translations
-# Recieved: 受取済み
+# Recieved: 受取済み same as picking done
 # Stopped: 停止中
 # Picking: 移動中
 # Waiting: 待機中
 # Restarting: 再開中
+# send robot id as a response too in getrobot
+# barcode
 
 
 # GLOBAL CONST:
@@ -39,8 +41,11 @@ def dump_data(fname, data):
 
 def data_fetch_byorder(fname, id):
     data2 = data_fetch(fname)
-    for i in data2['page2data']:
-        if i["job_id"] == id:
+    for i in data2['jobs_queue']:
+        if str(i["job_id"]) == id:
+            return i
+    for i in data2['jobs_completed']:
+        if str(i["job_id"]) == id:
             return i
 
 @app.route("/", methods=["GET", "POST"])
@@ -53,7 +58,20 @@ def hello():
         }
         print(up_data)
 
-    data = data_fetch('homepage_api_data.json')
+    data2 = data_fetch('current_orders.json')
+    hmpgata = []
+    count = 1
+    for item in data2["jobs_queue"]:
+        hmpgata.append(
+            {"serial_number": count,
+            "name": item["job_details"]["ref_num"],
+            "order_id": item["job_id"],
+            "status": item["status"]
+        })
+        count+=1
+    data = {
+        "homepageData": hmpgata
+    }
     data.update(color)
 
     return render_template('home.html', data=data)
@@ -92,14 +110,36 @@ def jobstat(robot_num):
 @app.route("/robotlist", methods=["GET"])
 def robotlist():
 
-    data = data_fetch('robot_api_data.json')
+    data = data_fetch('robot_temp_db.json')
 
-    return render_template('robot.html', data=data)
+    data_list = []
+
+    for el in data.keys():
+        data_list.append(data[el])
+    
+    robot_list_data = {
+        "robot_list_data": data_list
+    }
+
+    return render_template('robot.html', data=robot_list_data)
 
 @app.route("/pastorders", methods=["GET"])
 def pastorders():
 
-    data = data_fetch('pastorders_api_data.json')
+    data2 = data_fetch('current_orders.json')
+    hmpgata = []
+    count = 1
+    for item in data2["jobs_completed"]:
+        hmpgata.append(
+            {"serial_number": count,
+            "name": item["job_details"]["ref_num"],
+            "order_id": item["job_id"],
+            "status": item["status"]
+        })
+        count+=1
+    data = {
+        "homepageData": hmpgata
+    }
     data.update(color)
 
     return render_template('pastorders.html', data=data)
@@ -107,7 +147,8 @@ def pastorders():
 
 @app.route('/2/<order_id>')
 def tw(order_id):
-    data = data_fetch_byorder('page2_api_data.json', order_id)
+    data = data_fetch_byorder('current_orders.json', order_id)
+    print(data)
     return render_template('2.html', data=data)
 
 @app.route('/7')
