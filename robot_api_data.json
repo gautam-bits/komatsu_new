@@ -1,0 +1,12 @@
+{
+  "robot_list_data": [
+    {
+      "name": "Robot 1",
+      "status": "Picking"
+    },
+    {
+      "name": "Robot 2",
+      "status": "Picking Done"
+    }
+  ]
+}

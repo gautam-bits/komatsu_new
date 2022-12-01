@@ -6,6 +6,7 @@
 </title>
 <link rel="stylesheet" href="{{ url_for('static', filename='assets/CSS/style.css')}}" />
 <link rel="stylesheet" href="{{ url_for('static', filename='assets/CSS/home.css')}}" />
+<link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
 <head>
 </head>
 
@@ -15,7 +16,8 @@
         <div class="home">
             <div class="header">
                 <div class="title">
-                    <h4>KOMATSU</h4>
+                    <!-- <img src="{{ url_for('static', filename='assets/Images/komatsu.png')}}"> -->
+                    <img src="{{ url_for('static', filename='assets/Images/komatsu.png')}}">
                 </div>
                 <div class="sub_title">
                     <h5>オーダーリスト</h5>
@@ -23,12 +25,12 @@
                 <div class="blank"></div>
                 <div class="box1">
                     <div class="header_box">
-                        ステータス
+                        <a href="{{url_for('robotlist')}}" style="color: inherit; text-decoration: none;"><button class="btnHeader">ステータス</button></a>
                     </div>
                 </div>
                 <div class="box2">
                     <div class="header_box">
-                        過去のオーダ
+                        <a href="{{url_for('pastorders')}}" style="color: inherit; text-decoration: none;"><button class="btnHeader">過去のオーダ</button></a>    
                     </div>
                 </div>
             </div>

@@ -4,13 +4,13 @@
             "serial_number": 1,
             "name": "DKIPW0932D",
             "order_id": "122323",
-            "status": "Picking"
+            "status": "受取済み"
         },
         {
             "serial_number": 2,
             "name": "DKIPW0932D",
             "order_id": "122623",
-            "status": "Waiting"
+            "status": "待機中"
         }
     ]
 }

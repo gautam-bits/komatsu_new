@@ -8,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/CSS/style.css')}}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='assets/CSS/2.css')}}" />
+    <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
 </head>
 
 <body>
@@ -17,7 +18,7 @@
         <div class="home">
             <div class="header">
                 <div class="title">
-                    <h4>KOMATSU</h4>
+                    <img src="{{ url_for('static', filename='assets/Images/komatsu.png')}}">
                 </div>
                 <div class="sub_title">
                     <h5>ロボットのステータス</h5>
@@ -27,7 +28,7 @@
                 </div>
                 <div class="box2">
                     <div class="header_box">
-                        リストに戻る
+                        <button class="btnHeader"> リストに戻る</button>
                     </div>
                 </div>
             </div>

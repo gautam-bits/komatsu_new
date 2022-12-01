@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<title>
+    Home
+</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/CSS/robotlist.css')}}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='assets/CSS/home.css')}}" />
+<link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
+<head>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="home">
+            <div class="header">
+                <div class="title">
+                    <img src="{{ url_for('static', filename='assets/Images/komatsu.png')}}">
+                </div>
+                <div class="sub_title">
+                    <h5>ロボットのステータス</h5>
+                </div>
+                <div class="blank"></div>
+                <!-- <div class="box1">
+                    <div class="header_box">
+                        <button class="btnHeader">ステータス</button>
+                    </div>
+                </div> -->
+                <!-- <div class="box2">
+                    <div class="header_box">
+                        <button class="btnHeader">過去のオーダ</button>      
+                    </div>
+                </div> -->
+                <div class="box2">
+                  <div class="header_box">
+                      <a href="{{url_for('hello')}}" style="text-decoration: none; color: inherit;">
+                          リストに戻る
+                      </a>
+                  </div>
+              </div>
+            </div>
+
+            <!-- <div class="fixed_div">
+                <div class="list">
+                    <ul class="listHome">
+                        {% if data %}
+                            {% for i in data['robot_llist_data'] %}
+                                <a href="{{url_for('tw', order_id=i['order_id'])}}" style="color: inherit; text-decoration: none;">
+                                    <li class="listItem">
+                                        <div class="flex_row">
+                                            <div class="list_index">
+                                                <h4 class="index_text">{{i['serial_number']}}</h4>
+                                            </div>
+                                            <div class="list_key">
+                                                <h4 class="key_text">{{i['name']}}</h4>
+                                            </div>
+                                            <div class="list_value">
+                                                {% for k, v in data['color'].items() if k == i['status'] %}
+                                                    <h4 class="value_text" style="color: {{v}}">{{i['status']}}</h4>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </li>
+                                </a>
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+                </div>
+            </div> -->
+
+            <div class="fixed_div">
+              <div class="list" style="margin-top: 60px">
+                  <ul class="listHome">
+                      {% if data %}
+                          {% for i in data['robot_list_data'] %}
+                              <li class ="listcontainer" style="color: inherit; text-decoration: none;">
+                                  <span class="boxnone">{{i["name"]}}</span>
+                                  {% if i["status"] == "Waiting" %} <span class="boxactive">Waiting</span> {% endif %}
+                                  {% if i["status"] != "Waiting" %} <span class="boxsimple">Waiting</span> {% endif %}
+                                  {% if i["status"] == "Picking" %} <span class="boxactive">Picking</span> {% endif %}
+                                  {% if i["status"] != "Picking" %} <span class="boxsimple">Picking</span> {% endif %}
+                                  {% if i["status"] == "Picking Done" %} <span class="boxactive">Picking Done</span> {% endif %}
+                                  {% if i["status"] != "Picking Done" %} <span class="boxsimple">Picking Done</span> {% endif %}
+                                  {% if i["status"] == "Error" %} <span class="boxactive">Error</span> {% endif %}
+                                  {% if i["status"] != "Error" %} <span class="boxsimple">Error</span> {% endif %}
+                              </li>
+                          {% endfor %}
+                      {% endif %}
+                  </ul>
+              </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

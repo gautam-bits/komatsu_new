@@ -3,14 +3,22 @@ import json
 from flask_qrcode import QRcode
 
 
+# Status translations
+# Recieved: 受取済み
+# Stopped: 停止中
+# Picking: 移動中
+# Waiting: 待機中
+# Restarting: 再開中
+
+
 # GLOBAL CONST:
 color = {
         "color": {
-            'Recieved': '#228B22',
-            'Stopped': '#D22B2B',
-            'Restarting': '#F28C28',
-            'Picking': '#00008B', 
-            'Waiting': '#ADD8E6'
+            '受取済み': '#42d935',
+            '停止中': '#fb0724',
+            '再開中': '#fc6f08',
+            '移動中': '#0914f7', 
+            '待機中': '#0f75ed'
         }
     }
 
@@ -45,6 +53,21 @@ def hello():
     data.update(color)
 
     return render_template('home.html', data=data)
+
+@app.route("/robotlist", methods=["GET"])
+def robotlist():
+
+    data = data_fetch('robot_api_data.json')
+
+    return render_template('robot.html', data=data)
+
+@app.route("/pastorders", methods=["GET"])
+def pastorders():
+
+    data = data_fetch('pastorders_api_data.json')
+    data.update(color)
+
+    return render_template('pastorders.html', data=data)
 
 
 @app.route('/2/<order_id>')

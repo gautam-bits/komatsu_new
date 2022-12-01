@@ -7,6 +7,7 @@
 
 <link rel="stylesheet" href="{{ url_for('static', filename='assets/CSS/style.css')}}" />
 <link rel="stylesheet" href="{{ url_for('static', filename='assets/CSS/2.css')}}" />
+<link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
 
 <head>
 </head>
@@ -18,7 +19,7 @@
         <div class="home">
             <div class="header">
                 <div class="title">
-                    <h4>KOMATSU</h4>
+                    <img src="{{ url_for('static', filename='assets/Images/komatsu.png')}}">
                 </div>
                 <div class="sub_title">
                     <h4>受取済み</h4>
@@ -27,9 +28,16 @@
                 <div class="box1">
 
                 </div>
+                <!-- <div class="box2">
+                    <div class="header_box">
+                        <button class="btnHeader"> リストに戻る</button>     
+                    </div>
+                </div> -->
                 <div class="box2">
                     <div class="header_box">
-                        リストに戻る
+                        <a href="{{url_for('hello')}}" style="text-decoration: none; color: inherit;">
+                            リストに戻る
+                        </a>
                     </div>
                 </div>
             </div>
@@ -90,11 +98,15 @@
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <div class="title" style="text-align:left">
-                    <h4>KOMATSU</h4>
+                    <img src="{{ url_for('static', filename='assets/Images/komatsu.png')}}">
                 </div>
                 <div class="modal_text_btn_div">
                     <div class="modal_text_div">
-                        <h3>リストに戻る</h3>
+                        <!-- <h3>リストに戻る</h3> -->
+                        <h3><a href="{{url_for('hello')}}" style="text-decoration: none; color: inherit;">
+                            リストに戻る
+                        </a></h3>
+                        
                     </div>
                     <form action="{{url_for('hello')}}" method="post">
                         <input type="hidden" name="id" value={{ data['job_id'] }}>
