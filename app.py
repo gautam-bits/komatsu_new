@@ -33,6 +33,10 @@ def data_fetch(fname):
     
     return data
 
+def dump_data(fname, data):
+    with open(fname, "w") as outfile:
+        json.dump(data, outfile)
+
 def data_fetch_byorder(fname, id):
     data2 = data_fetch(fname)
     for i in data2['page2data']:
@@ -53,6 +57,37 @@ def hello():
     data.update(color)
 
     return render_template('home.html', data=data)
+
+@app.route("/getjob/robot/<robot_num>", methods=["GET"])
+def getjob(robot_num):
+    data = data_fetch('current_orders.json')
+    
+    job = data['jobs_queue'].pop(0)
+    data['jobs_completed'].append(job)
+    dump_data('current_orders.json', data)
+
+    data = data_fetch('robot_temp_db.json')
+    data[robot_num]["job_id"]=job["job_id"]
+    data[robot_num]["status"]="Picking"
+    dump_data('robot_temp_db.json', data)
+    return job
+
+@app.route("/job-status/robot/<robot_num>", methods=["GET", "POST"])
+def jobstat(robot_num):
+    data = data_fetch('robot_temp_db.json')
+    if request.method == "POST":
+        # expecting {"status": "newstatus"}
+        req = request.json
+        newstatus = req.get("status")
+        if newstatus is None:
+            newstatus = "Unspecified"
+        data[robot_num]["status"] = newstatus
+        dump_data('robot_temp_db.json', data)
+        return data[robot_num]
+    else:
+        return data[robot_num]
+
+
 
 @app.route("/robotlist", methods=["GET"])
 def robotlist():

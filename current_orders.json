@@ -1,0 +1,29 @@
+{
+    "jobs_queue": [
+        {
+            "job_id": 155212,
+            "job_details": {
+                "box_num": 221,
+                "ref_num": "DX87824239",
+                "location": "D2",
+                "part_num": 39,
+                "item": "screw",
+                "position": [125, 874, 985]
+            }
+        },
+        {
+            "job_id": 146897,
+            "job_details": {
+                "box_num": 221,
+                "ref_num": "Dfsdafsfda",
+                "location": "D2",
+                "part_num": 39,
+                "item": "hammer",
+                "position": [125, 874, 985]
+            }
+        }
+    ],
+    "jobs_completed": [
+        
+    ]
+}
