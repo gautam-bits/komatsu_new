@@ -47,15 +47,21 @@ def data_fetch_byorder(fname, id):
 
 @app.route("/", methods=["GET", "POST"])
 def hello():
-    if request.method == "POST":
-        id = request.form['id']
-        up_data = {
-            "order_id": id,
-            "status": "confirmed"
-        }
-        print(up_data)
-
     data2 = data_fetch('current_orders.json')
+    if request.method == "POST":
+        dat = request.json
+        jobid = dat.get("job_id")
+        stat = dat.get("status")
+        if stat == '受取済み':
+            newstatus = 'Done'
+        elif stat == '停止中':
+            newstatus = '再開中'
+        else:
+            newstatus = '停止中'
+        data2['jobs'][jobid]['status'] = newstatus
+        dump_data('current_orders.json', data2)
+
+
     hmpgata = []
     count = 1
     for itemid in data2["jobs"]:
@@ -153,6 +159,12 @@ def pastorders():
 @app.route('/2/<order_id>')
 def tw(order_id):
     data = data_fetch_byorder('current_orders.json', order_id)
+    if data['status'] == '受取済み':
+        data['newstatus'] = 'Done'
+    elif data['status'] == '停止中':
+        data['newstatus'] = '再開中'
+    else:
+        data['newstatus'] = '停止中'
     print(data)
     return render_template('2.html', data=data)
 
