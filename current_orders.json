@@ -9,6 +9,7 @@
         "146897": {
             "job_id": "146897",
             "status": "待機中",
+            
             "robot_id":"-",
             "job_details": {
                 "box_num": 221,

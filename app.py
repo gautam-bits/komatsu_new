@@ -4,11 +4,11 @@ from flask_qrcode import QRcode
 
 
 # Status translations
-# Recieved: 受取済み same as picking done
-# Stopped: 停止中
-# Picking: 移動中
-# Waiting: 待機中
-# Restarting: 再開中
+# Recieved: 受取済み same as picking done / done   / approval completed
+# Stopped: 停止中  restart / 
+# Picking: 移動中 stop
+# Waiting: 待機中 stop
+# Restarting: 再開中 stop
 # send robot id as a response too in getrobot
 # barcode
 
@@ -30,13 +30,13 @@ QRcode(app)
 
 
 def data_fetch(fname):
-    with open(fname, 'r') as f:
+    with open(fname, 'r', encoding='utf-8') as f:
         data = json.load(f)
     
     return data
 
 def dump_data(fname, data):
-    with open(fname, "w") as outfile:
+    with open(fname, "w", encoding='utf-8') as outfile:
         json.dump(data, outfile)
 
 def data_fetch_byorder(fname, id):
