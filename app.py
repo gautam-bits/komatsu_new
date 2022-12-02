@@ -118,7 +118,8 @@ def jobstat(robot_num):
         data[robot_num]["status"] = newstatus
         if newstatus == "Picking Done":
             newstatus = "受取済み"
-        data2['jobs'][data[robot_num]["job_id"]]["status"]= newstatus
+        if newstatus is not "Waiting":
+            data2['jobs'][data[robot_num]["job_id"]]["status"]= newstatus
         dump_data('robot_temp_db.json', data)
         dump_data('current_orders.json', data2)
         return data[robot_num]
