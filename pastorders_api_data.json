@@ -1,3 +1,1 @@
-{
-  "jobs_completed": {}
-}
+{"jobs_completed": {"154657": {"job_id": "154657", "status": "Done", "robot_id": "-", "job_details": {"box_num": 221, "ref_num": "sadfasdf", "location": "D2", "part_num": 39, "item": "screw", "position": [125, 874, 985]}}}}

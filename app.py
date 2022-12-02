@@ -49,17 +49,25 @@ def data_fetch_byorder(fname, id):
 def hello():
     data2 = data_fetch('current_orders.json')
     if request.method == "POST":
-        dat = request.json
-        jobid = dat.get("job_id")
-        stat = dat.get("status")
+        jobid = request.form["job_id"]
+        stat = request.form["status"]
         if stat == '受取済み':
             newstatus = 'Done'
+
         elif stat == '停止中':
             newstatus = '再開中'
         else:
             newstatus = '停止中'
         data2['jobs'][jobid]['status'] = newstatus
+        if newstatus == 'Done':
+            jb = data2['jobs'][jobid]
+            del data2['jobs'][jobid]
+            pstord = data_fetch('pastorders_api_data.json')
+            pstord['jobs_completed'][jb['job_id']] = jb
+            dump_data('pastorders_api_data.json', pstord)
         dump_data('current_orders.json', data2)
+        
+
 
 
     hmpgata = []
@@ -85,7 +93,7 @@ def getjob(robot_num):
     data = data_fetch('current_orders.json')
     
     jobid = data['jobs_waiting'].pop(0)
-    data['jobs'][jobid]['status'] = "Picking"
+    data['jobs'][jobid]['status'] = "移動中"
     data['jobs'][jobid]['robot_id'] = robot_num
 
     job = data['jobs'][jobid]
@@ -159,13 +167,17 @@ def pastorders():
 @app.route('/2/<order_id>')
 def tw(order_id):
     data = data_fetch_byorder('current_orders.json', order_id)
+    print("********************")
+    print(order_id)
+    print(type(data))
+    print(data)    
     if data['status'] == '受取済み':
         data['newstatus'] = 'Done'
     elif data['status'] == '停止中':
-        data['newstatus'] = '再開中'
+        data['newstatus'] = 'Restart'
     else:
-        data['newstatus'] = '停止中'
-    print(data)
+        data['newstatus'] = 'Stop'
+ 
     return render_template('2.html', data=data)
 
 @app.route('/7')
